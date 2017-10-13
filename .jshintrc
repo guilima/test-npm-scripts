@@ -1,0 +1,18 @@
+{
+  "esversion": 6,
+  "browser": true,
+  "node": true,
+  "devel": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "funcscope": true,
+  "maxdepth": 3,
+  "undef": true,
+  "unused": true,
+  "quotmark": "single",
+  "globals": {"_config": true},
+  "strict": false,
+  "validthis": true,
+  "plusplus": false
+}

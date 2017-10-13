@@ -1,0 +1,349 @@
+$color-dark: #383838;
+$color-white: #fff;
+
+// Menu Top
+  .mktp-menu-top {
+    background-color: $color-dark;
+    .b2w-marketplace {
+      @media (min-width: 768px) and (max-width: 991px) {
+        display: block;
+        overflow: hidden;
+        width: 58px;
+      }
+      .logo {
+        display: block;
+        max-width: 257px;
+        padding: 12px 0;
+      }
+    }
+    .hamburguer-open & .parceiro,
+    .hamburguer-open & .usuario { display: block; }
+  }
+
+  .mktp-menu-top .parceiro {
+    float: left;
+    padding: 10px 0;
+    position: relative;
+    @media (min-width: 768px) { min-width: 300px; }
+    @media (max-width: 767px) { min-width: 100%; }
+    ul.submenu {
+      position: absolute;
+      min-width: inherit;
+      background: #222;
+      border: none;
+      color: #eee;
+      overflow: auto;
+      max-height: 500px;
+      z-index: 1;
+      display: block!important; //Correct forced hide included
+      li {
+        white-space: nowrap;
+      }
+      li a {
+        display: block;
+        color: #eee;
+        text-transform: none;
+        font-weight: 400;
+        font-size: 1em;
+        padding: 8px 30px 8px 10px;
+        transition: background-color .5s;
+        &:hover {
+          background-color: #333;
+          transition: background-color .5s;
+        }
+      }
+      li:last-child {
+        background: #666;
+        a { color: #ccc; }
+      }
+    }
+
+    input {
+      background: #272727 url(https://www.b2wmarketplace.com.br/v2/assets/images/icon-search.png) no-repeat 5px center;
+      text-align: center;
+      border: 1px solid #000;
+      box-shadow: inset 2px 2px 3px #222;
+      color: #ccc;
+      min-width: inherit;
+    }
+
+    @media (max-width: 767px) { display: none; }
+  }
+
+  .mktp-menu-top .usuario {
+    float: right;
+    @media (max-width: 767px) {
+      width: 100%;
+      padding-bottom: 2px;
+      margin-top: -10px;
+      .menu > .item:not(:last-child) { float: left; }
+      .menu > .item:last-child { float: right; }
+    }
+    .notificationControl {
+      margin: 10px 0 0;
+      .icon-notificacao {
+        font-size: 1.3em;
+        color: #eee;
+        overflow: visible;
+        display: inline-table;
+        text-decoration: none;
+      }
+    }
+    .username {
+      white-space: nowrap;
+      color: $color-white;
+      text-overflow: ellipsis;
+      width: 180px;
+      overflow: hidden;
+      padding: 18px 20px 12px 15px;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .875em;
+      line-height: 1;
+      letter-spacing: .5px;
+      position: relative;
+      text-decoration: none;
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 110%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #999 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s;
+      }
+      &:active:after {
+        transform: scale(0, 0);
+        opacity: .2;
+        transition: 0s;
+      }
+      .caret {
+        position: absolute;
+        right: 3px;
+        top: 0;
+        bottom: 0;
+        left: auto!important;
+        margin: auto;
+        border-top: 5px dashed rgba(255,255,255,.5);
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+      }
+    }
+    .submenu {
+      min-width: 21%;
+      list-style: none;
+      position: absolute;
+      border: 1px solid #ddd;
+      background: $color-white;
+      margin: 0;
+      box-shadow: 0 3px 5px #aaa;
+      z-index: 1;
+      .item {
+        text-align: right;
+        &:last-child .link:before {
+          border-left: 1px solid #333;
+          position: absolute;
+          left: 10px;
+          content: '';
+          width: 1px;
+          height: 80%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      }
+    }
+    // Correct hover css on mktp-portal
+    .item:last-child:hover {
+      background-color: transparent;
+      color: transparent;
+    }
+    .user-avatar {
+      margin: 6px 0 4px 10px;
+      border-radius: 50%;
+      width: 35px;
+      max-width: 35px;
+      position: relative;
+      height: 35px;
+      min-height: 35px;
+      display: block;
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        line-height: 2.1;
+        content: '';
+        background-image: url('https://www.b2wmarketplace.com.br/v2/assets/images/icon-user.png');
+        background-size: 100%;
+        color: transparent;
+      }
+    }
+
+    @media (max-width: 767px) { display: none; }
+  }
+
+
+// Menu Main
+  .mktp-menu-main {
+    background-color: $color-white;
+    box-shadow: 5px 0 7px #999;
+    .item:first-child.active { background-color: transparent; }
+    .item:not(:first-child).item.active,
+    .has-children:hover { background-color: #eee }
+
+    .menu-hamburguer-icon {
+      position: absolute;
+      display: inline-block;
+      width: 1.25em;
+      height: 1.2em;
+      border-top: 0.2em solid #fff;
+      border-bottom: 0.2em solid #fff;
+      top: 14px;
+      right: 22px;
+    }
+
+    .menu-hamburguer-icon:before {
+        content: "";
+        position: absolute;
+        top: 0.3em;
+        left: 0px;
+        width: 100%;
+        border-top: 0.2em solid #fff;
+    }
+    .menu-hamburguer-icon:after {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: -10px;
+      left: -10px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    @media (max-width: 767px) { #menu { display: none; } }
+    .hamburguer-open & #menu{ display: block; }
+  }
+
+
+// Header General
+  .header-marketplace {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    .menu,
+    .submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+      @media (min-width: 768px) { > .item { float: left; } }
+      > .item  > .link {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .875em;
+        padding: 13px 15px 9px;
+        .caret {
+          position: relative;
+          left: 5px;
+          margin: 0 0 2px 2px;
+          border-top: 5px dashed rgba(0,0,0,.5);
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+        }
+      }
+      .item { white-space: nowrap; }
+      .item .link {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        color: $color-dark;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 110%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          background-image: radial-gradient(circle, #999 10%, transparent 10.01%);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          transform: scale(10, 10);
+          opacity: 0;
+          transition: transform .5s, opacity 1s;
+        }
+        &:active:after {
+          transform: scale(0, 0);
+          opacity: .2;
+          transition: 0s;
+        }
+
+        &:hover,
+        &:active {
+          background-color: #eee
+        }
+        .caret-right {
+          border-left: 5px dashed rgba(0,0,0,.5);
+          border-bottom: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px dashed transparent;
+        }
+        .badge{
+          float: right;
+          position: relative;
+          left: 10px;
+          top: -1px;
+        }
+      }
+    }
+
+    .menu .item .submenu {
+      @media (min-width: 768px) {
+        position: absolute;
+        border: 1px solid #ddd;
+        background: $color-white;
+        box-shadow: 0 3px 5px #aaa;
+      }
+      .item:not(:hover) .submenu-2 { display: none; }
+      .item:hover .submenu-2 { display: block!important; }
+      .submenu-2 {
+        left: 100%;
+        top: 0;
+        @media (max-width: 767px) { padding-left: 16px; }
+      }
+
+      .link {
+        padding: 8px 30px 8px 10px;
+        .caret {
+          position: absolute;
+          right: 10px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      }
+    }
+
+  }

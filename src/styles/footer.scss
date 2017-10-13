@@ -1,0 +1,118 @@
+// sprite logos - usando no footer, ...
+$sprite-logos: url(../images/sprite-logos.fw.png) no-repeat;
+
+
+.sprite-logo {
+
+  * { display: block }
+
+  .logo-b2wmarketplace {
+    background: $sprite-logos;
+    background-position: 0 0;
+    width: 180px;
+    height: 60px;
+  }
+  .logo-americanascom {
+    background: $sprite-logos;
+    background-position: -374px 0;
+    width: 141px;
+    height: 20px;
+  }
+  .logo-submarino {
+    background: $sprite-logos;
+    background-position: -533px 0;
+    width: 88px;
+    height: 51px;
+  }
+  .logo-shoptime {
+    background: $sprite-logos;
+    background-position: -374px -32px;
+    width: 122px;
+    height: 32px;
+  }
+  .logo-b2wservices {
+    background: $sprite-logos;
+    background-position: -189px 0;
+    width: 170px;
+    height: 43px;
+  }
+
+}
+
+$color-dark: #383838;
+
+.footer-marketplace {
+  $screen-sm-max: 991px;
+  $screen-xs-max: 767px;
+  background: $color-dark;
+  padding: 30px 0 0;
+  margin: 30px 0 0;
+
+  .sprite-logo {
+    float: left;
+    padding: 0 52px 0 0;
+  }
+
+  .v-align {
+    padding-top: 20px;
+  }
+
+  .last {
+    float: right;
+    border-left: 1px solid #666;
+    padding: 0 0 0 15px;
+  }
+
+  hr {
+    border-color: #666;
+    margin: 20px 0 15px 0;
+  }
+
+  p {
+    color: #eee;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    .sprite-logo {
+      padding-right: 12px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      // customiza exbibição dos logos declardos em _sprites.scss
+      .logo-b2wmarketplace {
+        background-size: cover;
+        width: 150px;
+        height: 50px;
+      }
+      .logo-b2wservices {
+        background-position: -167px 0;
+        background-size: cover;
+        width: 148px;
+        height: 55px;
+      }
+
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    .sprite-logo {
+      width: 50%;
+      padding-right: 0;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        padding-top: 15px;
+      }
+
+      span {
+        margin: 0 auto;
+      }
+    }
+  }
+}
