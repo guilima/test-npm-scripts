@@ -1,10 +1,10 @@
 {
-  "name": "menu-portal",
+  "name": "test-npm-scripts",
   "version": "0.0.1",
-  "description": "Menu header e footer no portal dos parceiros b2w marketplace",
+  "description": "Nothing only a stardust",
   "repository": {
     "type": "git",
-    "url": "http://stash.b2w/scm/MKTP/menu-portal.git"
+    "url": "http://git@github.com/guilima/test-npm-scripts.git"
   },
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize --hide-modules --config ./webpack.production.config.js",
