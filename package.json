@@ -9,6 +9,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize --hide-modules --config ./webpack.production.config.js",
     "prepublish": "npm run build",
+    "postinstall": "npm run build",
     "dev": "webpack-dev-server --progress --colors --open --hot --config ./webpack.development.config.js"
   },
   "author": "",
