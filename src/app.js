@@ -14,7 +14,7 @@ let headerMenuTemplate = `
         <div class="col-md-8 col-sm-10 col-sm-offset-1 col-md-offset-0">
           <nav class="menu-horizontal parceiro">
             <input type="text" id="search">
-            <ul id="listPartners" class="submenu"></ul>
+            <ul id="listPartners" class="submenu">Pluto</ul>
           </nav>
           <nav class="menu-horizontal usuario" data-attr="user-account">
           </nav>
